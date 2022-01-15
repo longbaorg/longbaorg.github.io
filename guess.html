@@ -387,7 +387,7 @@
 <script type="text/javascript" src="js/tagcanvas.js"></script>
 <!--默认的名单-->
 <script type="text/javascript" src="js/member.js"></script>
-<script type="text/javascript" src="js/listHapper.js"></script>
+<script type="text/javascript" src="../js/listHapper.js"></script>
 
 <script type="text/javascript">
 
@@ -403,11 +403,11 @@
         let tempMember=[];
 
         member.forEach(function (item,index){
-            tempMember.push({name:item,index:index});
+            tempMember.push({name:item,index:guess});
         })
         member=tempMember;
         listHapper.forEach(function (item,index){
-            temp.push({name:item,index:index});
+            temp.push({name:item,index:guess});
         })
         listHapper=temp;
 
@@ -460,7 +460,7 @@
             member.forEach(function (item, index) {
             // listHapper.forEach(function (item, index) {
 
-                item.index = index;
+                item.index = guess;
 
                 /*如何已经被抽奖抽中了，显示黄色的名字*/
                 console.log(!choosed[item.name]);
@@ -536,7 +536,7 @@
                 .filter(function (m, index) {
 
                     /*添加索引*/
-                    m.index = index;
+                    m.index = guess;
                     return !choosed[m.name];
                 })
                 /*遍历元素进行处理*/
